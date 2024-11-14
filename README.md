@@ -40,4 +40,18 @@ ou para homologação com:
 
 ```aws elasticbeanstalk update-environment --environment-name ambinete-de-homolog --version-label ambinete-de-homolog```
 
+
+## 🛠️ Comandos Uteis
+
+- Autenticação para subir a imagem no docker da AWS:
+```aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 266735828008.dkr.ecr.us-east-2.amazonaws.com```
+
+- Preparar a imagem no Docker para subir:
+```docker images```
+```docker tag d8a0353c59fe 266735828008.dkr.ecr.us-east-2.amazonaws.com/producao:V1```
+```docker push 266735828008.dkr.ecr.us-east-2.amazonaws.com/producao:V1```
+
+- Atualizar o ambiente Beanstalk versionando:
+```aws elasticbeanstalk update-environment --environment-name ambiente-de-producao --version-label ambiente-de-producao```
+
 🏆
